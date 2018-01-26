@@ -1,8 +1,11 @@
-import React, { Component } from 'react'
-import './App.css';
+import React, {Component} from 'react'
 
-class App extends Component {
-  state={}
+type Props = {}
+type State = {}
+
+export default class App extends Component<Props, State> {
+  state = {}
+
   componentWillMount () {
     fetch('/hello')
     .then((res) => res.json())
@@ -11,9 +14,8 @@ class App extends Component {
   }
 
   render() {
-
     return (
-      <div style={{flex: 1, marginTop: 20}} className="App">
+      <div style={styles.container}>
         <h1>Awesome Gimi Project</h1>
         <p>{this.state.msg}</p>
       </div>
@@ -21,4 +23,9 @@ class App extends Component {
   }
 }
 
-export default App;
+const styles = {
+  container: {
+    flex: 1,
+    marginTop: 20
+  }
+}
